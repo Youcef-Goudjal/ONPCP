@@ -61,17 +61,17 @@ export default function Contact() {
                     <MapPin className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold text-gray-900">المقر الاجتماعي</h4>
-                      <p className="text-gray-700">مقابل نهج حميدة بن شعبان</p>
-                      <p className="text-gray-700">الطابق الثاني رقم 04</p>
-                      <p className="text-gray-700 font-semibold">ولاية باتنة</p>
+                      <p className="text-gray-700">Loft</p>
+                      <p className="text-gray-700">الطابق الثاني</p>
+                      <p className="text-gray-700 font-semibold">ولاية الاغواط</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3 space-x-reverse">
                     <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-gray-900">الهاتف</h4>
-                      <a 
-                        href="tel:+213662787248" 
+                      <a
+                        href="tel:+213662787248"
                         className="text-blue-600 hover:underline"
                         dir="ltr"
                       >
@@ -83,8 +83,8 @@ export default function Contact() {
                     <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-gray-900">البريد الإلكتروني</h4>
-                      <a 
-                        href="mailto:laidtaibi34@gmail.com" 
+                      <a
+                        href="mailto:laidtaibi34@gmail.com"
                         className="text-blue-600 hover:underline"
                         dir="ltr"
                       >
@@ -113,7 +113,7 @@ export default function Contact() {
                   </div>
                   <div className="bg-white p-4 rounded-lg">
                     <p className="text-sm text-gray-600">
-                      للتواصل مع المكتب الولائي، يرجى استخدام نموذج الاتصال أدناه أو 
+                      للتواصل مع المكتب الولائي، يرجى استخدام نموذج الاتصال أدناه أو
                       التواصل عبر المكتب الوطني.
                     </p>
                   </div>
