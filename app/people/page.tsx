@@ -8,145 +8,111 @@ export default function PeoplePage() {
       id: 1,
       title: "رئيس المكتب الولائي",
       name: "مولفرعة إبراهيم خليل",
-      birthDate: "2001/10/25",
-      location: "الأغواط",
       category: "إدارة عليا",
     },
     {
       id: 2,
       title: "نائب الرئيس الأول",
       name: "ميسوكة عطاء الله",
-      birthDate: "1991/11/27",
-      location: "الأغواط",
       category: "إدارة عليا",
     },
     {
       id: 3,
       title: "نائب الرئيس الثاني",
       name: "بن خليفة عطاء الله",
-      birthDate: "1973/05/28",
-      location: "الأغواط",
       category: "إدارة عليا",
     },
     {
       id: 4,
       title: "مسؤول التنظيم والإدارة",
       name: "خنشة أحمد",
-      birthDate: "2001/10/13",
-      location: "الأغواط",
       category: "إدارة",
     },
     {
       id: 5,
-      title: "المكلف بالإعلام والإتصال",
-      name: "بلهاني سفيان",
-      birthDate: "1987/08/09",
-      location: "الأغواط",
-      category: "إعلام",
-    },
-    {
-      id: 6,
       title: "أمين المال",
       name: "بوزياني الطاهر",
-      birthDate: "2001/09/27",
-      location: "الأغواط",
       category: "مالية",
     },
     {
+      id: 6,
+      title: "مكلف بالسكن والعمران والأشغال العمومية",
+      name: "شريفي فاطمة الزهراء",
+      category: "قطاعات",
+    },
+    {
       id: 7,
-      title: "مستشار مكلف بالشؤون القانونية",
-      name: "لطرش زكرياء",
-      birthDate: "1955/02/19",
-      location: "الأغواط",
-      category: "قانوني",
+      title: "مكلف بالصحة",
+      name: "بن قيط هيثم الطاهر",
+      category: "قطاعات",
     },
     {
       id: 8,
-      title: "مستشار مكلف بالبروتوكولات والتنظيم العام",
-      name: "شايفة أحمد",
-      birthDate: "2003/02/02",
-      location: "الأغواط",
-      category: "تنظيم",
+      title: "مكلف بالتربية والتعليم",
+      name: "شقنان أحمد",
+      category: "قطاعات",
     },
     {
       id: 9,
-      title: "مكلف بالتربية والتعليم",
-      name: "شقنان أحمد",
-      birthDate: "1999/04/03",
-      location: "الأغواط",
+      title: "مكلف بالفلاحة والتنمية الريفية",
+      name: "داودي ياسين",
       category: "قطاعات",
     },
+
     {
       id: 10,
       title: "مكلف التعليم العالي والبحث العلمي",
       name: "جعيرن الطيب",
-      birthDate: "2000/01/01",
-      location: "الأغواط",
       category: "قطاعات",
     },
     {
       id: 11,
-      title: "مكلف الشباب والرياضة",
-      name: "قنيول أحمد",
-      birthDate: "2007/10/19",
-      location: "الأغواط",
+      title: "عضو مكلف بالمؤسسات المصغرة والناشئة",
+      name: "أولاد جديد لخضر كمال",
       category: "قطاعات",
     },
     {
       id: 12,
-      title: "مكلف بالفلاحة والتنمية الريفية",
-      name: "داودي ياسين",
-      birthDate: "1985/09/17",
-      location: "الأغواط",
+      title: "مكلف الشباب والرياضة",
+      name: "قنيول أحمد",
       category: "قطاعات",
     },
     {
       id: 13,
-      title: "مكلف بالسكن والعمران والأشغال العمومية",
-      name: "شريفي فاطمة الزهراء",
-      birthDate: "1980/12/17",
-      location: "أفلو",
+      title: "مكلف التجارة وترقية الصادرات",
+      name: "قرميط بشرى",
       category: "قطاعات",
     },
     {
       id: 14,
-      title: "مكلف التجارة وترقية الصادرات",
-      name: "قرميط بشرى",
-      birthDate: "1999/02/17",
-      location: "الأغواط",
-      category: "قطاعات",
-    },
-    {
-      id: 15,
       title: "مكلف بالضمان الإجتماعي",
       name: "رزوق عبد القادر فاروق",
-      birthDate: "1994/11/26",
-      location: "الأغواط",
       category: "قطاعات",
+    },
+
+    {
+      id: 15,
+      title: "المكلف بالإعلام والإتصال",
+      name: "بلهاني سفيان",
+      category: "إعلام",
     },
     {
       id: 16,
-      title: "عضو مكلف بالصحة",
-      name: "بن قيط هيثم الطاهر",
-      birthDate: "1997/04/29",
-      location: "الأغواط",
+      title: "مكلف بالسياحة والثقافة",
+      name: "شاللي فاطنة",
       category: "قطاعات",
     },
     {
       id: 17,
-      title: "عضو مكلف بالمؤسسات المصغرة والناشئة",
-      name: "أولاد جديد لخضر كمال",
-      birthDate: "1983/05/07",
-      location: "المنيعة",
-      category: "قطاعات",
+      title: "مستشار مكلف بالشؤون القانونية",
+      name: "لطرش زكرياء",
+      category: "قانوني",
     },
     {
       id: 18,
-      title: "عضو مكلف بالسياحة والثقافة",
-      name: "شاللي فاطنة",
-      birthDate: "1999/01/31",
-      location: "الأغواط",
-      category: "قطاعات",
+      title: "مستشار مكلف بالبروتوكولات والتنظيم العام",
+      name: "شايفة أحمد",
+      category: "تنظيم",
     },
   ];
 
@@ -193,7 +159,7 @@ export default function PeoplePage() {
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white text-2xl font-bold">
                     {person.name.split(" ")[0]?.[0] || ""}
                   </div>
-                  <Badge 
+                  <Badge
                     className={categoryColors[person.category as keyof typeof categoryColors]}
                   >
                     {person.category}
@@ -208,12 +174,9 @@ export default function PeoplePage() {
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-gray-600">
                     <Calendar className="w-4 h-4 ml-2 flex-shrink-0" />
-                    <span dir="ltr">{person.birthDate}</span>
+
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <MapPin className="w-4 h-4 ml-2 flex-shrink-0" />
-                    <span>{person.location}</span>
-                  </div>
+
                 </div>
               </CardContent>
             </Card>
@@ -293,7 +256,7 @@ export default function PeoplePage() {
           </CardHeader>
           <CardContent className="flex flex-col items-center">
             <p className="text-center text-gray-700 max-w-2xl mb-6">
-              يعمل المكتب الولائي على ترسيخ قيم النزاهة والشفافية ومحاربة الفساد في جميع 
+              يعمل المكتب الولائي على ترسيخ قيم النزاهة والشفافية ومحاربة الفساد في جميع
               القطاعات الحكومية والإدارية بولاية الأغواط.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
