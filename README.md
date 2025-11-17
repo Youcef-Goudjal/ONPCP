@@ -91,7 +91,43 @@ ONPCP/
 
 ## النشر
 
-### Vercel (موصى به)
+### GitHub Pages (التكوين الحالي)
+
+تم تكوين المشروع للنشر التلقائي على GitHub Pages:
+
+#### الإعداد الأولي
+
+1. **تفعيل GitHub Pages في المستودع:**
+   - اذهب إلى Settings > Pages
+   - في قسم "Source"، اختر "GitHub Actions"
+
+2. **دفع التغييرات:**
+```bash
+git add .
+git commit -m "Configure GitHub Pages deployment"
+git push origin main
+```
+
+3. **سيتم نشر الموقع تلقائياً على:**
+   ```
+   https://<username>.github.io/ONPCP
+   ```
+
+#### النشر التلقائي
+
+- كل دفع (push) إلى الفرع `main` سيؤدي تلقائياً إلى بناء ونشر الموقع
+- يمكنك متابعة حالة النشر في تبويب "Actions" في GitHub
+
+#### البناء المحلي
+
+```bash
+# بناء المشروع
+npm run build
+
+# الملفات الناتجة ستكون في مجلد out/
+```
+
+### Vercel (بديل)
 
 ```bash
 # تثبيت Vercel CLI
@@ -100,24 +136,6 @@ npm i -g vercel
 # نشر المشروع
 vercel
 ```
-
-### بناء ثابت (Static Export)
-
-إذا كنت تريد تصدير الموقع كملفات HTML ثابتة:
-
-1. أضف إلى `next.config.ts`:
-```typescript
-const nextConfig = {
-  output: 'export',
-};
-```
-
-2. قم بالبناء:
-```bash
-npm run build
-```
-
-3. الملفات الناتجة ستكون في مجلد `out/`
 
 ## الدعم
 
