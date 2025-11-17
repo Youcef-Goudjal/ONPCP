@@ -47,7 +47,7 @@ export default function Home() {
             <CardContent>
               <p className="text-gray-700 text-center leading-relaxed">
                 تكريس ثقافة الشفافية والنزاهة في المجتمع، وحماية الممتلكات العامة، وتعزيز دور 
-                المواطن في مكافحة الفساد.
+                المواطن في وقاية الفساد.
               </p>
             </CardContent>
           </Card>

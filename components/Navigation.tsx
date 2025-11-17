@@ -37,7 +37,7 @@ export default function Navigation() {
               />
             </div>
             <div className="text-right">
-              <div className="text-sm font-bold text-gray-800">المكتب الولائي</div>
+              <div className="text-sm font-bold text-gray-800">المكتب الولائي الأغواط</div>
               <div className="text-xs text-gray-600">للوقاية من الفساد</div>
             </div>
           </Link>

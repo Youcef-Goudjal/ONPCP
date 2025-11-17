@@ -154,13 +154,6 @@ export default function About() {
                   badgeColor: "bg-orange-100 text-orange-800",
                 },
                 {
-                  icon: Search,
-                  color: "text-red-600",
-                  title: "فرق المتابعة والتحقيق",
-                  badge: "ميداني",
-                  badgeColor: "bg-red-100 text-red-800",
-                },
-                {
                   icon: Handshake,
                   color: "text-gray-600",
                   title: "المستشارون والأعضاء",
