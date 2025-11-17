@@ -1,71 +1,163 @@
+import { Calendar, MapPin, Landmark, Settings, Scale, Building } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export default function PeoplePage() {
   const organizationStructure = [
     {
-      title: "المدير الولائي",
-      name: "الأستاذ / محمد بن أحمد",
-      role: "مدير المكتب الولائي",
-      description: "الإشراف العام على جميع أنشطة المكتب الولائي وتنفيذ السياسات الوطنية للوقاية من الفساد",
-      email: "director@onpcp.dz",
-      phone: "023 XX XX XX",
+      id: 1,
+      title: "رئيس المكتب الولائي",
+      name: "مولفرعة إبراهيم خليل",
+      birthDate: "2001/10/25",
+      location: "الأغواط",
       category: "إدارة عليا",
     },
     {
-      title: "مدير الشؤون الإدارية والمالية",
-      name: "الأستاذة / فاطمة بن علي",
-      role: "مسؤولة الإدارة والمالية",
-      description: "إدارة الموارد البشرية والمالية، وضمان حسن سير العمليات الإدارية",
-      email: "admin@onpcp.dz",
-      phone: "023 XX XX XX",
+      id: 2,
+      title: "نائب الرئيس الأول",
+      name: "ميسوكة عطاء الله",
+      birthDate: "1991/11/27",
+      location: "الأغواط",
+      category: "إدارة عليا",
+    },
+    {
+      id: 3,
+      title: "نائب الرئيس الثاني",
+      name: "بن خليفة عطاء الله",
+      birthDate: "1973/05/28",
+      location: "الأغواط",
+      category: "إدارة عليا",
+    },
+    {
+      id: 4,
+      title: "مسؤول التنظيم والإدارة",
+      name: "خنشة أحمد",
+      birthDate: "2001/10/13",
+      location: "الأغواط",
       category: "إدارة",
     },
     {
-      title: "رئيس مصلحة التحقيقات",
-      name: "الأستاذ / أحمد بن محمد",
-      role: "رئيس مصلحة التحقيقات",
-      description: "متابعة التبليغات، إجراء التحقيقات، وإعداد التقارير حول قضايا الفساد",
-      email: "investigations@onpcp.dz",
-      phone: "023 XX XX XX",
-      category: "تحقيقات",
+      id: 5,
+      title: "المكلف بالإعلام والإتصال",
+      name: "بلهاني سفيان",
+      birthDate: "1987/08/09",
+      location: "الأغواط",
+      category: "إعلام",
     },
     {
-      title: "رئيس مصلحة التوعية",
-      name: "الأستاذ / عمر بن يوسف",
-      role: "رئيس مصلحة التوعية والإعلام",
-      description: "تنظيم البرامج التحسيسية والحملات التوعوية للوقاية من الفساد",
-      email: "awareness@onpcp.dz",
-      phone: "023 XX XX XX",
-      category: "توعية",
+      id: 6,
+      title: "أمين المال",
+      name: "بوزياني الطاهر",
+      birthDate: "2001/09/27",
+      location: "الأغواط",
+      category: "مالية",
     },
     {
-      title: "رئيس مصلحة الدراسات",
-      name: "الدكتورة / سعاد بن خالد",
-      role: "رئيسة مصلحة الدراسات والتحليل",
-      description: "إجراء الدراسات والأبحاث حول ظاهرة الفساد وتحليل البيانات",
-      email: "studies@onpcp.dz",
-      phone: "023 XX XX XX",
-      category: "دراسات",
-    },
-    {
-      title: "المستشار القانوني",
-      name: "الأستاذ / كمال بن عيسى",
-      role: "مستشار قانوني",
-      description: "تقديم الاستشارات القانونية ومتابعة الإجراءات القضائية",
-      email: "legal@onpcp.dz",
-      phone: "023 XX XX XX",
+      id: 7,
+      title: "مستشار مكلف بالشؤون القانونية",
+      name: "لطرش زكرياء",
+      birthDate: "1955/02/19",
+      location: "الأغواط",
       category: "قانوني",
+    },
+    {
+      id: 8,
+      title: "مستشار مكلف بالبروتوكولات والتنظيم العام",
+      name: "شايفة أحمد",
+      birthDate: "2003/02/02",
+      location: "الأغواط",
+      category: "تنظيم",
+    },
+    {
+      id: 9,
+      title: "مكلف بالتربية والتعليم",
+      name: "شقنان أحمد",
+      birthDate: "1999/04/03",
+      location: "الأغواط",
+      category: "قطاعات",
+    },
+    {
+      id: 10,
+      title: "مكلف التعليم العالي والبحث العلمي",
+      name: "جعيرن الطيب",
+      birthDate: "2000/01/01",
+      location: "الأغواط",
+      category: "قطاعات",
+    },
+    {
+      id: 11,
+      title: "مكلف الشباب والرياضة",
+      name: "قنيول أحمد",
+      birthDate: "2007/10/19",
+      location: "الأغواط",
+      category: "قطاعات",
+    },
+    {
+      id: 12,
+      title: "مكلف بالفلاحة والتنمية الريفية",
+      name: "داودي ياسين",
+      birthDate: "1985/09/17",
+      location: "الأغواط",
+      category: "قطاعات",
+    },
+    {
+      id: 13,
+      title: "مكلف بالسكن والعمران والأشغال العمومية",
+      name: "شريفي فاطمة الزهراء",
+      birthDate: "1980/12/17",
+      location: "أفلو",
+      category: "قطاعات",
+    },
+    {
+      id: 14,
+      title: "مكلف التجارة وترقية الصادرات",
+      name: "قرميط بشرى",
+      birthDate: "1999/02/17",
+      location: "الأغواط",
+      category: "قطاعات",
+    },
+    {
+      id: 15,
+      title: "مكلف بالضمان الإجتماعي",
+      name: "رزوق عبد القادر فاروق",
+      birthDate: "1994/11/26",
+      location: "الأغواط",
+      category: "قطاعات",
+    },
+    {
+      id: 16,
+      title: "عضو مكلف بالصحة",
+      name: "بن قيط هيثم الطاهر",
+      birthDate: "1997/04/29",
+      location: "الأغواط",
+      category: "قطاعات",
+    },
+    {
+      id: 17,
+      title: "عضو مكلف بالمؤسسات المصغرة والناشئة",
+      name: "أولاد جديد لخضر كمال",
+      birthDate: "1983/05/07",
+      location: "المنيعة",
+      category: "قطاعات",
+    },
+    {
+      id: 18,
+      title: "عضو مكلف بالسياحة والثقافة",
+      name: "شاللي فاطنة",
+      birthDate: "1999/01/31",
+      location: "الأغواط",
+      category: "قطاعات",
     },
   ];
 
   const categoryColors = {
     "إدارة عليا": "bg-purple-100 text-purple-800",
     "إدارة": "bg-blue-100 text-blue-800",
-    "تحقيقات": "bg-red-100 text-red-800",
-    "توعية": "bg-green-100 text-green-800",
-    "دراسات": "bg-yellow-100 text-yellow-800",
+    "إعلام": "bg-cyan-100 text-cyan-800",
+    "مالية": "bg-green-100 text-green-800",
     "قانوني": "bg-gray-100 text-gray-800",
+    "تنظيم": "bg-indigo-100 text-indigo-800",
+    "قطاعات": "bg-orange-100 text-orange-800",
   };
 
   return (
@@ -94,12 +186,12 @@ export default function PeoplePage() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {organizationStructure.map((person, index) => (
-            <Card key={index} className="hover:shadow-xl transition-all hover:-translate-y-1">
+          {organizationStructure.map((person) => (
+            <Card key={person.id} className="hover:shadow-xl transition-all hover:-translate-y-1">
               <CardHeader>
                 <div className="flex items-start justify-between mb-3">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white text-2xl font-bold">
-                    {person.name.split(" ")[1]?.[0] || ""}
+                    {person.name.split(" ")[0]?.[0] || ""}
                   </div>
                   <Badge 
                     className={categoryColors[person.category as keyof typeof categoryColors]}
@@ -112,42 +204,15 @@ export default function PeoplePage() {
                   {person.name}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {person.description}
-                </p>
-                <div className="space-y-2 pt-4 border-t">
+              <CardContent className="space-y-3">
+                <div className="space-y-2">
                   <div className="flex items-center text-sm text-gray-600">
-                    <svg 
-                      className="w-4 h-4 ml-2 flex-shrink-0" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" 
-                      />
-                    </svg>
-                    <span dir="ltr">{person.email}</span>
+                    <Calendar className="w-4 h-4 ml-2 flex-shrink-0" />
+                    <span dir="ltr">{person.birthDate}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
-                    <svg 
-                      className="w-4 h-4 ml-2 flex-shrink-0" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
-                      />
-                    </svg>
-                    <span dir="ltr">{person.phone}</span>
+                    <MapPin className="w-4 h-4 ml-2 flex-shrink-0" />
+                    <span>{person.location}</span>
                   </div>
                 </div>
               </CardContent>
@@ -160,66 +225,99 @@ export default function PeoplePage() {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            المصالح والأقسام
+            الأقسام والمصالح
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: "🏛️",
-                title: "الإدارة العامة",
-                description: "الإشراف والتنسيق العام",
+                icon: Landmark,
+                color: "text-purple-600",
+                title: "الإدارة العليا",
+                description: "الرئاسة ونواب الرئيس",
+                count: 3,
               },
               {
-                icon: "🔍",
-                title: "مصلحة التحقيقات",
-                description: "التحقيق في قضايا الفساد",
+                icon: Settings,
+                color: "text-blue-600",
+                title: "التنظيم والإدارة",
+                description: "التنظيم، المالية، والإعلام",
+                count: 4,
               },
               {
-                icon: "📢",
-                title: "مصلحة التوعية",
-                description: "التحسيس والتوعية",
+                icon: Scale,
+                color: "text-gray-700",
+                title: "الشؤون القانونية",
+                description: "الاستشارات والبروتوكولات",
+                count: 2,
               },
               {
-                icon: "📊",
-                title: "مصلحة الدراسات",
-                description: "البحث والتحليل",
+                icon: Building,
+                color: "text-green-600",
+                title: "القطاعات المختصة",
+                description: "مكلفون بالقطاعات الحكومية",
+                count: 9,
               },
-            ].map((dept, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="text-5xl mb-3">{dept.icon}</div>
-                  <CardTitle className="text-lg">{dept.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{dept.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+            ].map((dept, index) => {
+              const Icon = dept.icon;
+              return (
+                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="flex justify-center mb-3">
+                      <Icon className={`w-12 h-12 ${dept.color}`} />
+                    </div>
+                    <CardTitle className="text-lg mb-2">{dept.title}</CardTitle>
+                    <Badge variant="secondary" className="mb-2">
+                      {dept.count} {dept.count === 1 ? 'عضو' : 'أعضاء'}
+                    </Badge>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription>{dept.description}</CardDescription>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Summary Section */}
       <section className="container mx-auto px-4 py-16">
         <Card className="bg-gradient-to-r from-blue-50 to-blue-100 border-blue-200">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl mb-2">تواصل معنا</CardTitle>
-            <CardDescription className="text-base">
-              للاستفسارات أو للحصول على معلومات إضافية، يمكنكم التواصل معنا
+            <CardTitle className="text-3xl mb-4">
+              المكتب الولائي للأغواط
+            </CardTitle>
+            <CardDescription className="text-lg">
+              فريق من <span className="font-bold text-gray-900">18 عضواً</span> متفانين في خدمة الصالح العام
             </CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div className="flex items-center text-gray-700">
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <span dir="ltr">contact@onpcp.dz</span>
-            </div>
-            <div className="flex items-center text-gray-700">
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              <span dir="ltr">023 XX XX XX</span>
+          <CardContent className="flex flex-col items-center">
+            <p className="text-center text-gray-700 max-w-2xl mb-6">
+              يعمل المكتب الولائي على ترسيخ قيم النزاهة والشفافية ومحاربة الفساد في جميع 
+              القطاعات الحكومية والإدارية بولاية الأغواط.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <Badge className="bg-purple-100 text-purple-800 px-4 py-2">
+                3 إدارة عليا
+              </Badge>
+              <Badge className="bg-blue-100 text-blue-800 px-4 py-2">
+                1 تنظيم وإدارة
+              </Badge>
+              <Badge className="bg-cyan-100 text-cyan-800 px-4 py-2">
+                1 إعلام
+              </Badge>
+              <Badge className="bg-green-100 text-green-800 px-4 py-2">
+                1 مالية
+              </Badge>
+              <Badge className="bg-gray-100 text-gray-800 px-4 py-2">
+                1 قانوني
+              </Badge>
+              <Badge className="bg-indigo-100 text-indigo-800 px-4 py-2">
+                1 تنظيم
+              </Badge>
+              <Badge className="bg-orange-100 text-orange-800 px-4 py-2">
+                10 قطاعات متخصصة
+              </Badge>
             </div>
           </CardContent>
         </Card>

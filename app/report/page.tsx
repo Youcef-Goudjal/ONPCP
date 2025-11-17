@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Briefcase, DollarSign, Landmark, Handshake, BarChart, Scale, Lock, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -42,32 +43,38 @@ export default function Report() {
 
   const reportableIssues = [
     {
-      icon: "💼",
+      icon: Briefcase,
+      color: "text-blue-600",
       title: "استغلال الوظيفة",
       description: "استغلال الوظيفة العامة لتحقيق منفعة شخصية",
     },
     {
-      icon: "💰",
+      icon: DollarSign,
+      color: "text-green-600",
       title: "تجاوزات مالية",
       description: "تجاوزات مالية أو إدارية في المؤسسات العمومية",
     },
     {
-      icon: "🏛️",
+      icon: Landmark,
+      color: "text-purple-600",
       title: "سوء استخدام الممتلكات",
       description: "سوء استخدام أو إهمال الممتلكات والموارد العامة",
     },
     {
-      icon: "🤝",
+      icon: Handshake,
+      color: "text-orange-600",
       title: "الرشوة والمحسوبية",
       description: "حالات الرشوة، المحسوبية، والمحاباة",
     },
     {
-      icon: "📊",
+      icon: BarChart,
+      color: "text-teal-600",
       title: "اختلاس الموارد",
       description: "اختلاس الموارد العامة أو إتلافها",
     },
     {
-      icon: "⚖️",
+      icon: Scale,
+      color: "text-gray-700",
       title: "مخالفات النزاهة",
       description: "أي سلوك مخالف لمبادئ النزاهة والشفافية",
     },
@@ -88,24 +95,46 @@ export default function Report() {
       {/* Info Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-blue-50 p-8 rounded-xl mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              نوفّر لك حماية كاملة
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              نوفّر للمواطنين آلية آمنة وسرّية للتبليغ عن أي تجاوزات أو ممارسات مشبوهة تمس
-              المال العام أو تخالف القوانين المعمول بها.
-            </p>
-            <div className="flex items-center space-x-3 space-x-reverse bg-white p-4 rounded-lg border-r-4 border-blue-600">
-              <div className="text-3xl">🔒</div>
-              <div>
-                <h3 className="font-bold text-gray-900">ضمان السرية التامة</h3>
-                <p className="text-gray-600">
-                  كل المعلومات التي تصلنا تُعامل بسرية تامة، مع حماية كاملة لهوية المبلّغين
+          {/* Privacy and Confidentiality Notice */}
+          <Card className="mb-12 border-red-200 bg-gradient-to-br from-red-50 to-orange-50">
+            <CardHeader>
+              <div className="flex items-center gap-3 mb-2">
+                <Lock className="w-10 h-10 text-red-600" />
+                <CardTitle className="text-2xl">السرية والحماية القانونية</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="bg-white p-4 rounded-lg border-r-4 border-red-600">
+                <p className="text-gray-800 leading-relaxed font-semibold flex items-center gap-2">
+                  <Lock className="w-5 h-5 text-red-600 flex-shrink-0" />
+                  تُعالج جميع المعلومات بسرية تامة وفقاً للقانون
                 </p>
               </div>
-            </div>
-          </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded-lg">
+                  <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-600" /> حماية كاملة للمبلّغين
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    نضمن حماية هوية المبلّغين وعدم تعرضهم لأي انتقام أو ضرر
+                  </p>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-600" /> معالجة قانونية
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    جميع البلاغات تُعالج وفقاً للإطار القانوني الجزائري
+                  </p>
+                </div>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                نوفّر للمواطنين آلية آمنة وسرّية للتبليغ عن أي تجاوزات أو ممارسات مشبوهة تمس
+                المال العام أو تخالف القوانين المعمول بها. يمكنك اختيار التبليغ المجهول أو تقديم 
+                بياناتك للمتابعة.
+              </p>
+            </CardContent>
+          </Card>
 
           {/* Reportable Issues */}
           <div className="mb-12">
@@ -113,19 +142,22 @@ export default function Report() {
               ما يمكن التبليغ عنه
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {reportableIssues.map((issue, index) => (
-                <Card key={index} className="hover:border-red-300 transition-colors">
-                  <CardHeader>
-                    <div className="text-4xl mb-2">{issue.icon}</div>
-                    <CardTitle className="text-lg">{issue.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-sm">
-                      {issue.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              ))}
+              {reportableIssues.map((issue, index) => {
+                const Icon = issue.icon;
+                return (
+                  <Card key={index} className="hover:border-red-300 transition-colors">
+                    <CardHeader>
+                      <Icon className={`w-10 h-10 mb-2 ${issue.color}`} />
+                      <CardTitle className="text-lg">{issue.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-sm">
+                        {issue.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Landmark, MapPin, Phone, Mail, User, Clock, Facebook, Twitter, Linkedin, Instagram, Map } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -47,45 +48,82 @@ export default function Contact() {
             <h2 className="text-3xl font-bold text-gray-900 mb-8">معلومات الاتصال</h2>
 
             <div className="space-y-6">
-              {/* Address */}
-              <div className="flex items-start space-x-4 space-x-reverse bg-teal-50 p-6 rounded-xl">
-                <div className="flex-shrink-0 w-12 h-12 bg-teal-600 text-white rounded-full flex items-center justify-center text-2xl">
-                  📍
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">العنوان</h3>
-                  <p className="text-gray-600">
-                    (سيتم إضافة العنوان الرسمي للمكتب الولائي)
-                  </p>
-                </div>
-              </div>
+              {/* National Office */}
+              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Landmark className="w-6 h-6 text-blue-600" />
+                    المكتب الوطني
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-start space-x-3 space-x-reverse">
+                    <MapPin className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">المقر الاجتماعي</h4>
+                      <p className="text-gray-700">مقابل نهج حميدة بن شعبان</p>
+                      <p className="text-gray-700">الطابق الثاني رقم 04</p>
+                      <p className="text-gray-700 font-semibold">ولاية باتنة</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3 space-x-reverse">
+                    <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">الهاتف</h4>
+                      <a 
+                        href="tel:+213662787248" 
+                        className="text-blue-600 hover:underline"
+                        dir="ltr"
+                      >
+                        +213 662 787 248
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3 space-x-reverse">
+                    <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">البريد الإلكتروني</h4>
+                      <a 
+                        href="mailto:laidtaibi34@gmail.com" 
+                        className="text-blue-600 hover:underline"
+                        dir="ltr"
+                      >
+                        laidtaibi34@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
-              {/* Phone */}
-              <div className="flex items-start space-x-4 space-x-reverse bg-blue-50 p-6 rounded-xl">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl">
-                  📞
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">رقم الهاتف</h3>
-                  <p className="text-gray-600">(سيتم إضافة رقم الهاتف)</p>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="flex items-start space-x-4 space-x-reverse bg-purple-50 p-6 rounded-xl">
-                <div className="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center text-2xl">
-                  ✉️
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">البريد الإلكتروني</h3>
-                  <p className="text-gray-600">(سيتم إضافة البريد الإلكتروني)</p>
-                </div>
-              </div>
+              {/* Provincial Office - Laghouat */}
+              <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <MapPin className="w-6 h-6 text-green-600" />
+                    المكتب الولائي - الأغواط
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-start space-x-3 space-x-reverse">
+                    <User className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">رئيس المكتب</h4>
+                      <p className="text-gray-700">السيد مولفرعة إبراهيم خليل</p>
+                    </div>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg">
+                    <p className="text-sm text-gray-600">
+                      للتواصل مع المكتب الولائي، يرجى استخدام نموذج الاتصال أدناه أو 
+                      التواصل عبر المكتب الوطني.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
 
               {/* Working Hours */}
-              <div className="flex items-start space-x-4 space-x-reverse bg-green-50 p-6 rounded-xl">
-                <div className="flex-shrink-0 w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-2xl">
-                  🕐
+              <div className="flex items-start space-x-4 space-x-reverse bg-purple-50 p-6 rounded-xl">
+                <div className="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center">
+                  <Clock className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">ساعات العمل</h3>
@@ -100,19 +138,22 @@ export default function Contact() {
               <h3 className="font-bold text-gray-900 mb-4">تابعنا على</h3>
               <div className="flex gap-4">
                 {[
-                  { name: "Facebook", icon: "📘", color: "bg-blue-600" },
-                  { name: "Twitter", icon: "🐦", color: "bg-sky-500" },
-                  { name: "LinkedIn", icon: "💼", color: "bg-blue-700" },
-                  { name: "Instagram", icon: "📷", color: "bg-pink-600" },
-                ].map((social) => (
-                  <button
-                    key={social.name}
-                    className={`${social.color} text-white w-12 h-12 rounded-full flex items-center justify-center text-xl hover:opacity-80 transition-opacity`}
-                    title={social.name}
-                  >
-                    {social.icon}
-                  </button>
-                ))}
+                  { name: "Facebook", icon: Facebook, color: "bg-blue-600" },
+                  { name: "Twitter", icon: Twitter, color: "bg-sky-500" },
+                  { name: "LinkedIn", icon: Linkedin, color: "bg-blue-700" },
+                  { name: "Instagram", icon: Instagram, color: "bg-pink-600" },
+                ].map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <button
+                      key={social.name}
+                      className={`${social.color} text-white w-12 h-12 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity`}
+                      title={social.name}
+                    >
+                      <Icon className="w-6 h-6" />
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -216,7 +257,9 @@ export default function Contact() {
           <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="bg-gradient-to-br from-teal-100 to-blue-100 p-20 flex items-center justify-center">
               <div className="text-center">
-                <div className="text-8xl mb-4">🗺️</div>
+                <div className="flex justify-center mb-4">
+                  <Map className="w-24 h-24 text-teal-600" />
+                </div>
                 <p className="text-xl text-gray-700">
                   سيتم إضافة الخريطة التفاعلية هنا
                 </p>
