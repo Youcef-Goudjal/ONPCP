@@ -4,18 +4,21 @@ import Image from "next/image";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import ReportFab from "@/components/ReportFab";
+import { getAssetPath } from "@/lib/assets";
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
   variable: "--font-cairo",
 });
 
+const logoPath = getAssetPath("/logo.png");
+
 export const metadata: Metadata = {
   title: "المنظمة الوطنية للوقاية من الفساد وحماية الممتلكات العامة",
   description: "المكتب الولائي للمنظمة الوطنية للوقاية من الفساد وحماية الممتلكات العامة",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: logoPath,
+    apple: logoPath,
   },
 };
 
@@ -35,7 +38,7 @@ export default function RootLayout({
             <div className="flex flex-col items-center text-center space-y-6">
               <div className="relative w-24 h-24">
                 <Image
-                  src="/logo.png"
+                  src={getAssetPath("/logo.png")}
                   alt="شعار المنظمة"
                   fill
                   className="object-contain opacity-90"

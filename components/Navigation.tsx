@@ -4,10 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { getAssetPath } from "@/lib/assets";
 
 const navLinks = [
   { href: "/", label: "الرئيسية" },
   { href: "/report", label: "التبليغ عن الفساد" },
+  { href: "/people", label: "الأشخاص" },
+  { href: "/tasks", label: "المهام" },
   { href: "/news", label: "الأخبار والنشاطات" },
   { href: "/mission", label: "المهام والصلاحيات" },
   { href: "/about", label: "من نحن" },
@@ -25,7 +28,7 @@ export default function Navigation() {
           <Link href="/" className="flex items-center space-x-3 space-x-reverse hover:opacity-80 transition-opacity">
             <div className="relative w-12 h-12 flex-shrink-0">
               <Image
-                src="/logo.png"
+                src={getAssetPath("/logo.png")}
                 alt="شعار المنظمة"
                 fill
                 className="object-contain"
