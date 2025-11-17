@@ -1,0 +1,101 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "report": "Signaler la corruption",
+    "people": "Personnel",
+    "tasks": "Tâches",
+    "news": "Actualités et Activités",
+    "mission": "Missions et Prérogatives",
+    "about": "À propos",
+    "contact": "Contactez-nous",
+    "orgName": "Bureau de Wilaya de Laghouat",
+    "orgSubtitle": "pour la Prévention de la Corruption"
+  },
+  "home": {
+    "title": "Organisation Nationale de Prévention de la Corruption et de Protection des Biens Publics",
+    "subtitle": "Institution à caractère privé, agréée par acte notarié n° 2024/1309, œuvrant pour la promotion des valeurs d'intégrité, la protection des deniers publics et la lutte contre la corruption sous toutes ses formes, conformément aux lois algériennes et en coordination avec les autorités compétentes.",
+    "reportButton": "Signaler la corruption",
+    "aboutButton": "En savoir plus",
+    "mission": {
+      "title": "Notre Mission",
+      "content": "Ancrer une culture de transparence et d'intégrité dans la société, protéger les biens publics et renforcer le rôle du citoyen dans la prévention de la corruption."
+    },
+    "vision": {
+      "title": "Notre Vision",
+      "content": "Une Algérie exempte de corruption, fondée sur la justice et la bonne gouvernance, défendant l'intérêt public."
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "integrity": "Intégrité",
+      "responsibility": "Responsabilité",
+      "transparency": "Transparence",
+      "lawRespect": "Respect de la loi",
+      "publicService": "Service de l'intérêt public"
+    },
+    "services": {
+      "title": "Nos Services",
+      "reporting": {
+        "title": "Réception des signalements",
+        "description": "Réception des signalements et plaintes relatifs aux cas de corruption."
+      },
+      "legal": {
+        "title": "Orientation juridique",
+        "description": "Orientation juridique dans le domaine de la protection des biens publics."
+      },
+      "training": {
+        "title": "Sessions de formation",
+        "description": "Organisation de sessions de formation sur l'intégrité et la gouvernance."
+      },
+      "awareness": {
+        "title": "Sensibilisation",
+        "description": "Sensibilisation par des campagnes, forums et séminaires."
+      },
+      "reports": {
+        "title": "Rapports périodiques",
+        "description": "Préparation de rapports périodiques sur la corruption locale."
+      },
+      "cooperation": {
+        "title": "Coopération institutionnelle",
+        "description": "Coopération avec les organismes officiels dans le traitement des dossiers."
+      }
+    },
+    "welcome": {
+      "title": "Bienvenue",
+      "content": "Sur le site officiel du Bureau de Wilaya, votre espace ouvert pour obtenir des informations, déposer des réclamations, connaître les mécanismes de signalement et suivre l'actualité de nos activités de terrain."
+    },
+    "quickLinks": {
+      "title": "Liens rapides",
+      "mission": {
+        "title": "Missions et Prérogatives",
+        "description": "Découvrez les missions et prérogatives du Bureau de Wilaya",
+        "badge": "Missions"
+      },
+      "news": {
+        "title": "Actualités et Activités",
+        "description": "Dernières actualités et activités du Bureau de Wilaya",
+        "badge": "Nouveau"
+      },
+      "contact": {
+        "title": "Contactez-nous",
+        "description": "Contactez-nous pour toute question ou plainte",
+        "badge": "Contact"
+      },
+      "readMore": "Lire la suite →"
+    }
+  },
+  "footer": {
+    "orgName": "Organisation Nationale de Prévention de la Corruption et de Protection des Biens Publics",
+    "subtitle": "Bureau de Wilaya - Intégrité, Transparence, Responsabilité",
+    "copyright": "Tous droits réservés"
+  },
+  "language": {
+    "ar": "العربية",
+    "fr": "Français",
+    "en": "English"
+  },
+  "reportFab": {
+    "text": "Signaler",
+    "tooltip": "Signaler la corruption"
+  }
+}
+

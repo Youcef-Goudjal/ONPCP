@@ -1,0 +1,100 @@
+{
+    "navigation": {
+        "home": "Home",
+        "report": "Report Corruption",
+        "people": "People",
+        "tasks": "Tasks",
+        "news": "News and Activities",
+        "mission": "Missions and Prerogatives",
+        "about": "About Us",
+        "contact": "Contact Us",
+        "orgName": "Laghouat Wilaya Office",
+        "orgSubtitle": "for Corruption Prevention"
+    },
+    "home": {
+        "title": "National Organization for Corruption Prevention and Public Property Protection",
+        "subtitle": "A private institution, approved by notarial deed No. 2024/1309, working to promote integrity values, protect public funds, and combat corruption in all its forms, in accordance with Algerian laws and in coordination with competent authorities.",
+        "reportButton": "Report Corruption",
+        "aboutButton": "Learn More",
+        "mission": {
+            "title": "Our Mission",
+            "content": "To establish a culture of transparency and integrity in society, protect public property, and enhance the citizen's role in preventing corruption."
+        },
+        "vision": {
+            "title": "Our Vision",
+            "content": "An Algeria free from corruption, based on justice and good governance, defending the public interest."
+        },
+        "values": {
+            "title": "Our Values",
+            "integrity": "Integrity",
+            "responsibility": "Responsibility",
+            "transparency": "Transparency",
+            "lawRespect": "Respect for the law",
+            "publicService": "Public service"
+        },
+        "services": {
+            "title": "Our Services",
+            "reporting": {
+                "title": "Receiving Reports",
+                "description": "Receiving reports and complaints related to corruption cases."
+            },
+            "legal": {
+                "title": "Legal Guidance",
+                "description": "Providing legal guidance in the field of public property protection."
+            },
+            "training": {
+                "title": "Training Sessions",
+                "description": "Organizing training sessions on integrity and governance."
+            },
+            "awareness": {
+                "title": "Awareness Raising",
+                "description": "Raising awareness through campaigns, forums, and seminars."
+            },
+            "reports": {
+                "title": "Periodic Reports",
+                "description": "Preparing periodic reports on local corruption."
+            },
+            "cooperation": {
+                "title": "Institutional Cooperation",
+                "description": "Cooperation with official bodies in handling cases."
+            }
+        },
+        "welcome": {
+            "title": "Welcome",
+            "content": "To the official website of the Wilaya Office, your open space for obtaining information, filing complaints, learning about reporting mechanisms, and following the news of our field activities."
+        },
+        "quickLinks": {
+            "title": "Quick Links",
+            "mission": {
+                "title": "Missions and Prerogatives",
+                "description": "Learn about the missions and prerogatives of the Wilaya Office",
+                "badge": "Missions"
+            },
+            "news": {
+                "title": "News and Activities",
+                "description": "Latest news and activities of the Wilaya Office",
+                "badge": "New"
+            },
+            "contact": {
+                "title": "Contact Us",
+                "description": "Contact us for any inquiry or complaint",
+                "badge": "Contact"
+            },
+            "readMore": "Read more →"
+        }
+    },
+    "footer": {
+        "orgName": "National Organization for Corruption Prevention and Public Property Protection",
+        "subtitle": "Wilaya Office - Integrity, Transparency, Responsibility",
+        "copyright": "All rights reserved"
+    },
+    "language": {
+        "ar": "العربية",
+        "fr": "Français",
+        "en": "English"
+    },
+    "reportFab": {
+        "text": "Report",
+        "tooltip": "Report Corruption"
+    }
+}
