@@ -1,0 +1,35 @@
+{
+    "kind": "singleType",
+    "collectionName": "translations",
+    "info": {
+        "singularName": "translation",
+        "pluralName": "translations",
+        "displayName": "Translation",
+        "description": "Site translations for internationalization"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {
+        "i18n": {
+            "localized": true
+        }
+    },
+    "attributes": {
+        "navigation": {
+            "type": "json"
+        },
+        "home": {
+            "type": "json"
+        },
+        "footer": {
+            "type": "json"
+        },
+        "language": {
+            "type": "json"
+        },
+        "reportFab": {
+            "type": "json"
+        }
+    }
+}

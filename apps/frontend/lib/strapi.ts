@@ -1,5 +1,5 @@
 import qs from "qs";
-import type { StrapiResponse, StrapiQueryParams } from "@onpcp/types";
+import type { StrapiResponse, StrapiQueryParams, StrapiMedia } from "@onpcp/types";
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
 const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
@@ -37,14 +37,17 @@ export async function fetchAPI<T>(options: FetchAPIOptions): Promise<T> {
     });
 
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
       throw new Error(`Strapi API error: ${response.status} ${response.statusText}`);
     }
 
     const data = await response.json();
     return data as T;
   } catch (error) {
-    console.error("Strapi API Error:", error);
+    // Only log non-connection errors (ECONNREFUSED is expected during dev startup)
+    const isConnectionError = error instanceof Error && (error.cause as { code?: string })?.code === "ECONNREFUSED";
+    if (!isConnectionError) {
+      console.error("Strapi API Error:", error);
+    }
     throw error;
   }
 }
@@ -112,10 +115,21 @@ export async function createEntry<T>(collection: string, data: any): Promise<T> 
 }
 
 /**
- * Helper to get full image URL
+ * Helper to get full image URL from a string path
  */
 export function getStrapiImageUrl(url: string | undefined): string {
   if (!url) return "";
   if (url.startsWith("http")) return url;
   return `${STRAPI_URL}${url}`;
+}
+
+/**
+ * Helper to extract image URL from StrapiMedia
+ * Handles both single image and array of images
+ */
+export function getStrapiMediaUrl(media: StrapiMedia | undefined): string {
+  if (!media?.data) return "";
+  const imageData = Array.isArray(media.data) ? media.data[0] : media.data;
+  if (!imageData) return "";
+  return getStrapiImageUrl(imageData.attributes.url);
 }
