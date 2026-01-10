@@ -2,4 +2,5 @@
 export * from "./people";
 export * from "./news";
 export * from "./pages";
+export * from "./translations";
 

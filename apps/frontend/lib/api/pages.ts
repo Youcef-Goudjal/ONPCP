@@ -21,6 +21,10 @@ export async function getAboutPage(
     });
     return response.data?.attributes || null;
   } catch (error) {
+    // Silently handle 404s - content may not exist yet
+    if (error instanceof Error && error.message.includes("NOT_FOUND")) {
+      return null;
+    }
     console.error("Failed to fetch about page:", error);
     return null;
   }
@@ -39,6 +43,10 @@ export async function getMissionPage(
     });
     return response.data?.attributes || null;
   } catch (error) {
+    // Silently handle 404s - content may not exist yet
+    if (error instanceof Error && error.message.includes("NOT_FOUND")) {
+      return null;
+    }
     console.error("Failed to fetch mission page:", error);
     return null;
   }
@@ -57,6 +65,10 @@ export async function getTasksPage(
     });
     return response.data?.attributes || null;
   } catch (error) {
+    // Silently handle 404s - content may not exist yet
+    if (error instanceof Error && error.message.includes("NOT_FOUND")) {
+      return null;
+    }
     console.error("Failed to fetch tasks page:", error);
     return null;
   }
@@ -75,6 +87,10 @@ export async function getContactInfo(
     });
     return response.data?.attributes || null;
   } catch (error) {
+    // Silently handle 404s - content may not exist yet
+    if (error instanceof Error && error.message.includes("NOT_FOUND")) {
+      return null;
+    }
     console.error("Failed to fetch contact info:", error);
     return null;
   }

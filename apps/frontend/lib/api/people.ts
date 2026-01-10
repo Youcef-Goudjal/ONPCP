@@ -23,6 +23,10 @@ export async function getPeople(
     });
     return response.data || [];
   } catch (error) {
+    // Silently handle 404s - content may not exist yet
+    if (error instanceof Error && error.message.includes("NOT_FOUND")) {
+      return [];
+    }
     console.error("Failed to fetch people:", error);
     return [];
   }
@@ -44,6 +48,10 @@ export async function getDepartments(
     });
     return response.data || [];
   } catch (error) {
+    // Silently handle 404s - content may not exist yet
+    if (error instanceof Error && error.message.includes("NOT_FOUND")) {
+      return [];
+    }
     console.error("Failed to fetch departments:", error);
     return [];
   }

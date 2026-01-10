@@ -41,6 +41,10 @@ export async function getNewsArticles(
       total: response.meta?.pagination?.total || 0,
     };
   } catch (error) {
+    // Silently handle 404s - content may not exist yet
+    if (error instanceof Error && error.message.includes("NOT_FOUND")) {
+      return { articles: [], total: 0 };
+    }
     console.error("Failed to fetch news articles:", error);
     return { articles: [], total: 0 };
   }
@@ -64,6 +68,10 @@ export async function getNewsArticleBySlug(
     });
     return response.data?.[0] || null;
   } catch (error) {
+    // Silently handle 404s - content may not exist yet
+    if (error instanceof Error && error.message.includes("NOT_FOUND")) {
+      return null;
+    }
     console.error("Failed to fetch news article:", error);
     return null;
   }
