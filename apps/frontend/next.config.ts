@@ -4,13 +4,28 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const isProd = process.env.NODE_ENV === 'production';
+const useStaticExport = process.env.STATIC_EXPORT === 'true';
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // Only use static export when explicitly enabled
+  ...(useStaticExport && { output: 'export' }),
   basePath: isProd ? '/ONPCP' : '',
   assetPrefix: isProd ? '/ONPCP/' : '',
   images: {
-    unoptimized: true,
+    ...(useStaticExport && { unoptimized: true }),
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '1337',
+        pathname: '/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.railway.app',
+        pathname: '/uploads/**',
+      },
+    ],
   },
 };
 
