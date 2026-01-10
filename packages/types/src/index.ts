@@ -82,7 +82,7 @@ export interface Report {
     title: string;
     description: string;
     category: string;
-    status: 'pending' | 'reviewing' | 'resolved' | 'rejected';
+    status: "pending" | "reviewing" | "resolved" | "rejected";
     submittedAt: string;
     reference: string;
   };
@@ -102,4 +102,3 @@ export interface StrapiQueryParams {
   };
   locale?: string;
 }
-

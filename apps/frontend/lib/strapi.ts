@@ -1,13 +1,13 @@
-import qs from 'qs';
-import type { StrapiResponse, StrapiQueryParams } from '@onpcp/types';
+import qs from "qs";
+import type { StrapiResponse, StrapiQueryParams } from "@onpcp/types";
 
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
 const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
 
 interface FetchAPIOptions {
   endpoint: string;
   query?: StrapiQueryParams;
-  method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
+  method?: "GET" | "POST" | "PUT" | "DELETE";
   body?: any;
 }
 
@@ -15,17 +15,17 @@ interface FetchAPIOptions {
  * Fetch data from Strapi API
  */
 export async function fetchAPI<T>(options: FetchAPIOptions): Promise<T> {
-  const { endpoint, query, method = 'GET', body } = options;
-  
-  const queryString = query ? `?${qs.stringify(query, { encodeValuesOnly: true })}` : '';
+  const { endpoint, query, method = "GET", body } = options;
+
+  const queryString = query ? `?${qs.stringify(query, { encodeValuesOnly: true })}` : "";
   const url = `${STRAPI_URL}/api${endpoint}${queryString}`;
 
   const headers: HeadersInit = {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   };
 
   if (STRAPI_TOKEN) {
-    headers['Authorization'] = `Bearer ${STRAPI_TOKEN}`;
+    headers["Authorization"] = `Bearer ${STRAPI_TOKEN}`;
   }
 
   try {
@@ -38,15 +38,13 @@ export async function fetchAPI<T>(options: FetchAPIOptions): Promise<T> {
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
-      throw new Error(
-        `Strapi API error: ${response.status} ${response.statusText}`,
-      );
+      throw new Error(`Strapi API error: ${response.status} ${response.statusText}`);
     }
 
     const data = await response.json();
     return data as T;
   } catch (error) {
-    console.error('Strapi API Error:', error);
+    console.error("Strapi API Error:", error);
     throw error;
   }
 }
@@ -57,7 +55,7 @@ export async function fetchAPI<T>(options: FetchAPIOptions): Promise<T> {
 export async function getEntryBySlug<T>(
   collection: string,
   slug: string,
-  query?: Partial<StrapiQueryParams>,
+  query?: Partial<StrapiQueryParams>
 ): Promise<T | null> {
   const data = await fetchAPI<StrapiResponse<T[]>>({
     endpoint: `/${collection}`,
@@ -73,10 +71,7 @@ export async function getEntryBySlug<T>(
 /**
  * Get multiple entries
  */
-export async function getEntries<T>(
-  collection: string,
-  query?: Partial<StrapiQueryParams>,
-): Promise<T[]> {
+export async function getEntries<T>(collection: string, query?: Partial<StrapiQueryParams>): Promise<T[]> {
   const data = await fetchAPI<StrapiResponse<T[]>>({
     endpoint: `/${collection}`,
     query,
@@ -91,7 +86,7 @@ export async function getEntries<T>(
 export async function getEntry<T>(
   collection: string,
   id: string | number,
-  query?: Partial<StrapiQueryParams>,
+  query?: Partial<StrapiQueryParams>
 ): Promise<T | null> {
   try {
     const data = await fetchAPI<StrapiResponse<T>>({
@@ -107,13 +102,10 @@ export async function getEntry<T>(
 /**
  * Create new entry
  */
-export async function createEntry<T>(
-  collection: string,
-  data: any,
-): Promise<T> {
+export async function createEntry<T>(collection: string, data: any): Promise<T> {
   const response = await fetchAPI<StrapiResponse<T>>({
     endpoint: `/${collection}`,
-    method: 'POST',
+    method: "POST",
     body: { data },
   });
   return response.data;
@@ -123,8 +115,7 @@ export async function createEntry<T>(
  * Helper to get full image URL
  */
 export function getStrapiImageUrl(url: string | undefined): string {
-  if (!url) return '';
-  if (url.startsWith('http')) return url;
+  if (!url) return "";
+  if (url.startsWith("http")) return url;
   return `${STRAPI_URL}${url}`;
 }
-

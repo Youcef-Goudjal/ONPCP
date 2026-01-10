@@ -5,7 +5,7 @@ Shared TypeScript types for ONPCP monorepo.
 ## Usage
 
 ```typescript
-import type { NewsArticle, Person, StrapiQueryParams } from '@onpcp/types';
+import type { NewsArticle, Person, StrapiQueryParams } from "@onpcp/types";
 ```
 
 ## Building
@@ -19,4 +19,3 @@ npm run build
 ```bash
 npm run dev
 ```
-
