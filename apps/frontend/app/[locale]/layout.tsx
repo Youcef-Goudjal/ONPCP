@@ -3,6 +3,7 @@ import { getMessages } from 'next-intl/server';
 import { Cairo } from "next/font/google";
 import Image from "next/image";
 import { notFound } from 'next/navigation';
+import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import ReportFab from "@/components/ReportFab";
 import { getAssetPath } from "@/lib/assets";
@@ -13,6 +14,11 @@ const cairo = Cairo({
   subsets: ["arabic", "latin"],
   variable: "--font-cairo",
 });
+
+export const metadata: Metadata = {
+  title: "المنظمة الوطنية للوقاية من الفساد وحماية الممتلكات العامة",
+  description: "المكتب الولائي للمنظمة الوطنية للوقاية من الفساد وحماية الممتلكات العامة",
+};
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
