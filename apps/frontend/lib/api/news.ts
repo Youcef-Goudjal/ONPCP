@@ -1,9 +1,5 @@
 import { fetchAPI } from "../strapi";
-import type {
-  StrapiResponse,
-  NewsArticle,
-  StrapiQueryParams,
-} from "@onpcp/types";
+import type { StrapiResponse, NewsArticle, StrapiQueryParams } from "@onpcp/types";
 
 /**
  * Fetch all news articles
@@ -36,8 +32,29 @@ export async function getNewsArticles(
       query,
     });
 
+    // Strapi v5 returns attributes directly in data items, not in data[].attributes
+    if (!response.data) {
+      return { articles: [], total: response.meta?.pagination?.total || 0 };
+    }
+
+    // Transform to match NewsArticle type structure (with attributes)
+    const articles = response.data.map((item: any) => ({
+      id: item.id,
+      attributes: {
+        title: item.title,
+        slug: item.slug,
+        content: item.content,
+        excerpt: item.excerpt,
+        category: item.category,
+        image: item.image,
+        publishDate: item.publishDate,
+        locale: item.locale,
+        publishedAt: item.publishedAt,
+      },
+    })) as NewsArticle[];
+
     return {
-      articles: response.data || [],
+      articles,
       total: response.meta?.pagination?.total || 0,
     };
   } catch (error) {
@@ -53,10 +70,7 @@ export async function getNewsArticles(
 /**
  * Fetch a single news article by slug
  */
-export async function getNewsArticleBySlug(
-  slug: string,
-  locale: string
-): Promise<NewsArticle | null> {
+export async function getNewsArticleBySlug(slug: string, locale: string): Promise<NewsArticle | null> {
   try {
     const response = await fetchAPI<StrapiResponse<NewsArticle[]>>({
       endpoint: "/news-articles",
@@ -66,7 +80,26 @@ export async function getNewsArticleBySlug(
         populate: ["image"],
       } satisfies StrapiQueryParams,
     });
-    return response.data?.[0] || null;
+
+    // Strapi v5 returns attributes directly in data items, not in data[].attributes
+    if (!response.data?.[0]) return null;
+
+    const item = response.data[0] as any;
+    // Transform to match NewsArticle type structure (with attributes)
+    return {
+      id: item.id,
+      attributes: {
+        title: item.title,
+        slug: item.slug,
+        content: item.content,
+        excerpt: item.excerpt,
+        category: item.category,
+        image: item.image,
+        publishDate: item.publishDate,
+        locale: item.locale,
+        publishedAt: item.publishedAt,
+      },
+    } as NewsArticle;
   } catch (error) {
     // Silently handle 404s - content may not exist yet
     if (error instanceof Error && error.message.includes("NOT_FOUND")) {
@@ -76,4 +109,3 @@ export async function getNewsArticleBySlug(
     return null;
   }
 }
-
