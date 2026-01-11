@@ -39,8 +39,14 @@ export async function fetchAPI<T>(options: FetchAPIOptions): Promise<T> {
     if (!response.ok) {
       // Handle 404 gracefully - content might not exist yet
       if (response.status === 404) {
-        console.warn(`Strapi endpoint not found: ${url} - Content may not be published yet`);
+        console.warn(`[Strapi API] 404 Not Found: ${endpoint} - Content may not be published or locale doesn't match`);
         throw new Error(`NOT_FOUND: ${endpoint}`);
+      }
+      if (response.status === 403) {
+        console.error(
+          `[Strapi API] 403 Forbidden: ${endpoint} - Check API permissions in Strapi Settings > Roles > Public`
+        );
+        throw new Error(`FORBIDDEN: ${endpoint} - Check API permissions`);
       }
       throw new Error(`Strapi API error: ${response.status} ${response.statusText}`);
     }
@@ -51,7 +57,7 @@ export async function fetchAPI<T>(options: FetchAPIOptions): Promise<T> {
     // Only log non-connection errors (ECONNREFUSED is expected during dev startup)
     const isConnectionError = error instanceof Error && (error.cause as { code?: string })?.code === "ECONNREFUSED";
     if (!isConnectionError && !(error instanceof Error && error.message.startsWith("NOT_FOUND"))) {
-      console.error("Strapi API Error:", error);
+      console.error("[Strapi API Error]:", error);
     }
     throw error;
   }

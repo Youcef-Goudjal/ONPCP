@@ -16,11 +16,13 @@ export async function getTranslations(locale: Locale): Promise<Messages | null> 
       } satisfies StrapiQueryParams,
     });
 
-    if (!response.data?.attributes) {
+    // Strapi v5 returns attributes directly in data, not in data.attributes
+    if (!response.data) {
       return null;
     }
 
-    const { navigation, home, footer, language, reportFab } = response.data.attributes;
+    // Extract attributes, excluding metadata fields
+    const { id, documentId, createdAt, updatedAt, publishedAt, locale: _, localizations, navigation, home, footer, language, reportFab } = response.data as any;
 
     return {
       navigation: navigation ?? {},
@@ -35,7 +37,7 @@ export async function getTranslations(locale: Locale): Promise<Messages | null> 
     if (error instanceof Error && error.message.includes("NOT_FOUND")) {
       return null;
     }
-    console.error("Failed to fetch translations from Strapi:", error);
+    console.error("[Translations] Failed to fetch from Strapi:", error);
     return null;
   }
 }
